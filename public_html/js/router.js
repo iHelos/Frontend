@@ -1,7 +1,13 @@
 define([
-    'backbone'
+    'backbone',
+    'views/login',
+    'views/manager',
+    'views/main'
 ], function(
-    Backbone
+    Backbone,
+    LoginScreen,
+    Manager,
+    MainMenu
 ){
 
     var Router = Backbone.Router.extend({
@@ -11,8 +17,12 @@ define([
             'login': 'loginAction',
             '*default': 'defaultActions'
         },
+        initialize: function(){
+            Manager.addView(LoginScreen);
+            Manager.addView(MainMenu);
+        },
         defaultActions: function () {
-            // TODO
+            MainMenu.show();
         },
         scoreboardAction: function () {
             // TODO
@@ -21,7 +31,7 @@ define([
             // TODO
         },
         loginAction: function () {
-            // TODO
+            LoginScreen.show();
         }
     });
 

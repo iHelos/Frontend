@@ -1,2 +1,4 @@
 <fest:template xmlns:fest="http://fest.mail.ru" context_name="json">
+
+    <a href="#login" class="button">Go to Google</a>
 </fest:template>
